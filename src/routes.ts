@@ -9,8 +9,8 @@ import { isAuthenticated } from "./middlewares/isAuthenticated";
 const router = Router();
 
 // -- Users routes --
-router.post('/users', isAuthenticated, new CreateUserController().handle)
+router.post('/users', new CreateUserController().handle)
 router.post('/login', new AuthUserController().handle)
-router.get('/users/:id', isAuthenticated, new DetailUserController().handle)
+router.get('/profile', isAuthenticated, new DetailUserController().handle)
 
 export { router };
