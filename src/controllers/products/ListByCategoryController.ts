@@ -3,7 +3,7 @@ import { ListByCategoryService } from "../../services/products/ListByCategorySer
 
 class ListByCategoryController {
     async handle(req: Request, res: Response) {
-        const category_id = req.query.category_id as string;
+        const { category_id } = req.body;
 
         const listByCategoryService = new ListByCategoryService();
 
