@@ -12,8 +12,8 @@ class DetailOrderService {
                 order_id: order_id,
             },
             include: {
-                Order: true,
-                Product: true,
+                order: true,
+                product: true,
             }
         })
 
