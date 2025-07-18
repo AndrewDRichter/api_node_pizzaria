@@ -4,10 +4,11 @@ import { DetailOrderService } from "../../services/orders/DetailOrderService";
 class DetailOrderController {
     async handle(req: Request, res: Response) {
 
-        const { order_id } = req.body;
+        const order_id = req.query.order_id as string;
 
         const detailOrderService = new DetailOrderService();
 
+        console.log(`controller order_id: ${order_id}`)
         const order = await detailOrderService.execute({ order_id });
 
         return res.json(order);
