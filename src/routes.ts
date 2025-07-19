@@ -35,7 +35,8 @@ router.post('/categories', isAuthenticated, new CreateCategoryController().handl
 router.get('/categories', isAuthenticated, new ListCategoriesController().handle)
 
 // -- Product routes --
-router.post('/products', isAuthenticated, upload.single('file'), new CreateProductController().handle)
+// router.post('/products', isAuthenticated, upload.single('file'), new CreateProductController().handle)
+router.post('/products', isAuthenticated, new CreateProductController().handle)
 router.get('/products', isAuthenticated, new ListByCategoryController().handle)
 
 // -- Order routes --

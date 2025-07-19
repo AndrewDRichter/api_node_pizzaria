@@ -8,7 +8,6 @@ class DetailOrderController {
 
         const detailOrderService = new DetailOrderService();
 
-        console.log(`controller order_id: ${order_id}`)
         const order = await detailOrderService.execute({ order_id });
 
         return res.json(order);
